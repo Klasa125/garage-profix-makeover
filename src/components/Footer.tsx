@@ -80,12 +80,16 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-background/15 pt-6 text-sm text-background/60 sm:flex-row">
-          <p>© {year} Garage Profix. Alle rechten voorbehouden.</p>
+          <p>
+            © {year} {siteConfig.legalName} · {siteConfig.address} · KvK:{" "}
+            {siteConfig.kvk}
+          </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-accent">Privacybeleid</a>
             <a href="#" className="hover:text-accent">Algemene Voorwaarden</a>
           </div>
         </div>
+
       </div>
     </footer>
   );
