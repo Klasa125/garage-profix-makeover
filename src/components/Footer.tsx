@@ -1,5 +1,6 @@
-import { Wrench, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import logo from "@/assets/profix-logo.png";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -9,17 +10,20 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2 text-lg font-extrabold">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                <Wrench className="h-5 w-5" aria-hidden="true" />
-              </span>
-              Garage Profix
-            </div>
+            <img
+              src={logo}
+              alt="Garage Profix logo"
+              width={1187}
+              height={216}
+              loading="lazy"
+              className="h-10 w-auto"
+            />
             <p className="mt-4 max-w-xs text-sm text-background/70">
               Uw betrouwbare autogarage voor onderhoud, reparatie en APK van alle
               automerken. Vakmanschap met persoonlijke service.
             </p>
           </div>
+
 
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest text-background/60">
@@ -76,12 +80,16 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-background/15 pt-6 text-sm text-background/60 sm:flex-row">
-          <p>© {year} Garage Profix. Alle rechten voorbehouden.</p>
+          <p>
+            © {year} {siteConfig.legalName} · {siteConfig.address} · KvK:{" "}
+            {siteConfig.kvk}
+          </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-accent">Privacybeleid</a>
             <a href="#" className="hover:text-accent">Algemene Voorwaarden</a>
           </div>
         </div>
+
       </div>
     </footer>
   );
