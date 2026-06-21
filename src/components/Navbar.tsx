@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, Wrench } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
+import logo from "@/assets/profix-logo.png";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
