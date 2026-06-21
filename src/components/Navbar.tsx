@@ -27,16 +27,14 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
         aria-label="Hoofdnavigatie"
       >
-        <a
-          href="#home"
-          className={`flex items-center gap-2 text-lg font-extrabold tracking-tight ${
-            scrolled ? "text-foreground" : "text-primary-foreground"
-          }`}
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-            <Wrench className="h-5 w-5" aria-hidden="true" />
-          </span>
-          Garage&nbsp;Profix
+        <a href="#home" aria-label="Garage Profix — home">
+          <img
+            src={logo}
+            alt="Garage Profix logo"
+            width={1187}
+            height={216}
+            className={`h-9 w-auto sm:h-10 ${scrolled ? "" : "drop-shadow-lg"}`}
+          />
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
