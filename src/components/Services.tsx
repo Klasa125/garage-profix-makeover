@@ -1,83 +1,38 @@
-import {
-  ClipboardCheck,
-  Settings,
-  Wrench,
-  CircleDot,
-  Snowflake,
-  ScanLine,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Reveal } from "@/components/Reveal";
+import { Wrench, CheckCircle, Activity, Snowflake, Settings, Car } from "lucide-react";
 
-const services = [
-  {
-    icon: ClipboardCheck,
-    title: "APK Keuring",
-    text: "Snel en betrouwbaar uw auto APK gekeurd. Inclusief duidelijke uitleg en advies over eventuele reparaties.",
-  },
-  {
-    icon: Settings,
-    title: "Regulier Onderhoud",
-    text: "Periodieke onderhoudsbeurten volgens fabrieksvoorschrift, zodat uw auto in topconditie blijft.",
-  },
-  {
-    icon: Wrench,
-    title: "Auto Reparatie",
-    text: "Van remmen en distributieriem tot motorwerk — wij verhelpen elk mankement vakkundig.",
-  },
-  {
-    icon: CircleDot,
-    title: "Banden & Uitlijnen",
-    text: "Bandenwissel, balanceren en uitlijnen voor optimale grip, veiligheid en een lager verbruik.",
-  },
-  {
-    icon: Snowflake,
-    title: "Airco Service",
-    text: "Aircocontrole, bijvullen en reinigen voor een fris en aangenaam klimaat in uw auto.",
-  },
-  {
-    icon: ScanLine,
-    title: "Diagnose",
-    text: "Moderne uitleesapparatuur spoort storingen snel op, zodat we gericht en zuinig kunnen repareren.",
-  },
+const servicesList = [
+  { title: "APK Keuring", desc: "Verplichte jaarlijkse keuring voor uw veiligheid en het milieu.", icon: CheckCircle },
+  { title: "Regulier Onderhoud", desc: "Kleine en grote beurt om uw auto in topconditie te houden.", icon: Settings },
+  { title: "Auto Reparatie", desc: "Vakkundige reparaties met uitsluitend kwaliteitsonderdelen.", icon: Wrench },
+  { title: "Banden & Uitlijnen", desc: "Zomer- en winterbanden wisselen en perfecte uitlijning.", icon: Car },
+  { title: "Airco Service", desc: "Vullen, reinigen en repareren van uw aircosysteem.", icon: Snowflake },
+  { title: "Diagnose & Uitlezen", desc: "Snel en accuraat opsporen van storingen via moderne apparatuur.", icon: Activity },
 ];
 
 export function Services() {
   return (
-    <section id="diensten" className="bg-secondary py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-bold uppercase tracking-widest text-accent">
-            Onze Diensten
-          </span>
-          <h2 className="mt-3 text-3xl text-foreground sm:text-4xl">
-            Alles voor uw auto onder één dak
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Compleet onderhoud en reparatie voor alle merken. Bekijk onze diensten
-            en plan eenvoudig een afspraak in.
+    <section id="diensten" className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Onze Diensten</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            Van een simpele lamp vervangen tot een complete motorrevisie: bij Garage Profix is uw auto in goede handen.
           </p>
-        </Reveal>
-
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <Reveal key={s.title} delay={(i % 3) * 0.1}>
-              <article className="group h-full rounded-2xl border border-border bg-card p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated">
-                <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
-                  <s.icon className="h-7 w-7" aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-xl font-bold text-foreground">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
-              </article>
-            </Reveal>
-          ))}
         </div>
 
-        <Reveal className="mt-12 text-center" delay={0.1}>
-          <Button asChild variant="cta" size="xl">
-            <a href="#contact">Vraag vrijblijvend een afspraak aan</a>
-          </Button>
-        </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {servicesList.map((service, index) => (
+            <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                <service.icon size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+              <p className="text-slate-600 leading-relaxed">
+                {service.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
