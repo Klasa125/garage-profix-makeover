@@ -1,4 +1,5 @@
 import { Calendar, Phone } from "lucide-react";
+import heroImg from "@/assets/hero-garage.jpg";
 
 export function Hero() {
   return (
@@ -7,7 +8,7 @@ export function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900/70 z-10"></div>
         <img 
-          src="/assets/hero-garage.jpg" 
+          src={heroImg}
           alt="Garage Profix Werkplaats" 
           className="w-full h-full object-cover"
         />
